@@ -1,1 +1,7 @@
-<Solution />
+<Solution>
+  <Project Path="APIBiblioteca/APIBiblioteca.csproj" />
+  <Project Path="Biblioteca.Application/Biblioteca.Application.csproj" />
+  <Project Path="Biblioteca.CrossCutting/Biblioteca.CrossCutting.csproj" />
+  <Project Path="Biblioteca.Domai/Biblioteca.Domain.csproj" />
+  <Project Path="Biblioteca.Infraestructure/Biblioteca.Infraestructure.csproj" />
+</Solution>
