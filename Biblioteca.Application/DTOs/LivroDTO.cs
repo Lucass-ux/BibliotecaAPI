@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Biblioteca.Application.DTOs
 {
-    internal class LivroDTO
+    public class LivroDTO
     {
         public int LivroId { get; set; }
 

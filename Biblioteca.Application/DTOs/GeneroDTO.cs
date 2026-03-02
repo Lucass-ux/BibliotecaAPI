@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Biblioteca.Application.DTOs;
 
-internal class GeneroDTO
+public class GeneroDTO
 {
     public int GeneroId { get; set; }
 

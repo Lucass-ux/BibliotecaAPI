@@ -5,6 +5,6 @@ using System.Text;
 
 namespace Biblioteca.Domain.Interfaces;
 
-internal interface ILivroRepository : IRepository<Livro>
+public interface ILivroRepository : IRepository<Livro>
 {
 }

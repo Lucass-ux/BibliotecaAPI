@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="APIBiblioteca/APIBiblioteca.csproj" />
+  <Project Path="APIBiblioteca/APIBiblioteca.csproj" Id="109c7380-1655-4e07-803a-e7bad29f6454" />
   <Project Path="Biblioteca.Application/Biblioteca.Application.csproj" />
   <Project Path="Biblioteca.CrossCutting/Biblioteca.CrossCutting.csproj" />
   <Project Path="Biblioteca.Domai/Biblioteca.Domain.csproj" />

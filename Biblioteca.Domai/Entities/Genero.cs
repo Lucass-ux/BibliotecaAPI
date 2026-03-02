@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Biblioteca.Domain.Entities;
 
-internal class Genero
+public class Genero
 {
     [Key]
     public int GeneroId { get; set; }

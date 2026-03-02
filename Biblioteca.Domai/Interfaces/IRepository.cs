@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace Biblioteca.Domain.Interfaces;
 
-internal interface IRepository<T> where T : class
+public interface IRepository<T> where T : class
 {
     Task<IEnumerable<T>> GetAllAsync();
-    Task<T> GetByIdAsync(int id);
-    T PostAsync(T entity);
-    T UpdateAsync(T entity);
-    T DeleteAsync(int id);
+    Task<T?> GetAsync(Expression<Func<T,bool>> predicate);
+    Task<T?> AddAsync(T entity);
+    T Update(T entity);
+    T Delete(T entity);
 }

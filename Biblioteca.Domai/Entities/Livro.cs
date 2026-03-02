@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace Biblioteca.Domain.Entities;
 
-internal class Livro
+public class Livro
 {
     [Key]
     public int LivroId { get; set; }

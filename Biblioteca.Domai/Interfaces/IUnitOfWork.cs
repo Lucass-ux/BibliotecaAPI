@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Biblioteca.Domain.Interfaces
 {
-    internal interface IUnitOfWork
+    public interface IUnitOfWork
     {
         ILivroRepository LivroRepository { get; }
         IGeneroRepository GeneroRepository { get; }
