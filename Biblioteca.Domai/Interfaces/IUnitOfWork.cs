@@ -6,8 +6,8 @@ namespace Biblioteca.Domain.Interfaces
 {
     public interface IUnitOfWork
     {
-        ILivroRepository LivroRepository { get; }
-        IGeneroRepository GeneroRepository { get; }
+        ILivroRepository Livro { get; }
+        IGeneroRepository Genero { get; }
         Task Commit();
     }
 }
