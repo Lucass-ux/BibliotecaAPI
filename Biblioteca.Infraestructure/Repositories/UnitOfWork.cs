@@ -16,7 +16,7 @@ public class UnitOfWork : IUnitOfWork
     {
         _context = context; 
     }
-    public ILivroRepository Livro
+    public ILivroRepository LivroRepository
     {
         get
         {
@@ -25,7 +25,7 @@ public class UnitOfWork : IUnitOfWork
             return _livroRepo;
         }
     }
-    public IGeneroRepository Genero
+    public IGeneroRepository GeneroRepository
     {
         get
         {
