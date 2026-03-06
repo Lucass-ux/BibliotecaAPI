@@ -40,7 +40,7 @@ public class LivroService
         var livro = _mapper.Map<Livro>(livroDto);
         await _uof.LivroRepository.AddAsync(livro);
         await _uof.Commit();
-        return livroDto;
+        return _mapper.Map<LivroDTO>(livro);
     }
     public async Task<LivroDTO?> Update(int id, LivroDTO livroDto)
     {

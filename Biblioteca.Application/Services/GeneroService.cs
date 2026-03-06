@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Biblioteca.Application.DTOs;
+using Biblioteca.Domain.Entities;
 using Biblioteca.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -33,5 +34,12 @@ public class GeneroService
         var generoDto = _mapper.Map<GeneroDTO>(genero); 
         return generoDto;   
     }
-    
+    public async Task<GeneroDTO> AddAsync(GeneroDTO generoDto)
+    {
+        var genero = _mapper.Map<Genero>(generoDto);
+        await _uof.GeneroRepository.AddAsync(genero);
+        await _uof.Commit();
+
+        return _mapper.Map<GeneroDTO>(genero);
+    }
 }
