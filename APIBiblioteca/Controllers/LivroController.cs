@@ -29,7 +29,7 @@ public class LivroController : ControllerBase
         if (id == null || id <= 0)
             return BadRequest($"Id de livro inválido!");
 
-        var livro = _livroService.GetLivroAsync(id);
+        var livro = await _livroService.GetLivroAsync(id);
 
         if (livro is null)
             return NotFound("Livro de Id = {id} não encontrado!");
@@ -37,6 +37,18 @@ public class LivroController : ControllerBase
         return Ok(livro);
     }
 
+    [HttpPost]
+    public async Task<ActionResult<LivroDTO>> Post(LivroDTO livro)
+    {
+        if (livro is null)
+            return BadRequest();
 
+        var livroCriado = await _livroService.AddAsync(livro);
+
+        if (livroCriado is null)
+            return BadRequest();
+
+        return Ok(livroCriado);
+    }
 
 }
