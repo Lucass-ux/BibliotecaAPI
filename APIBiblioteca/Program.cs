@@ -44,6 +44,7 @@ builder.Services.AddScoped<IGeneroRepository, GeneroRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<LivroService>();
+builder.Services.AddScoped<GeneroService>();
 
 var app = builder.Build();
 
