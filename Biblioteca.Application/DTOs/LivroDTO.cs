@@ -11,7 +11,7 @@ namespace Biblioteca.Application.DTOs
 
         [Required(ErrorMessage = "O nome do livro é obrigatório!")]
         [StringLength(50, ErrorMessage = "O nome deve ter no máximo {1} caracteres")]
-        public string Nome { get; set; } = null;
+        public string? Nome { get; set; } = null;
 
         public string? Autor { get; set; } = null;
 
