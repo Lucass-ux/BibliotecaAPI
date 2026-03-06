@@ -58,4 +58,16 @@ public class GeneroService
         var generoAtualizado = _mapper.Map<GeneroDTO>(genero);
         return generoAtualizado;
     }
+    public async Task<GeneroDTO?> Delete(int id)
+    {
+        var genero = await _uof.GeneroRepository.GetByIdAsync(g => g.GeneroId == id);
+
+        if (genero == null) 
+            return null;
+
+        var generoDeletado = _uof.GeneroRepository.Delete(genero);
+        await _uof.Commit();
+
+        return _mapper.Map<GeneroDTO>(generoDeletado);
+    }
 }
