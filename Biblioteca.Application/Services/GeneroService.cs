@@ -42,4 +42,20 @@ public class GeneroService
 
         return _mapper.Map<GeneroDTO>(genero);
     }
+    public async Task<GeneroDTO?> Update(int id, GeneroDTO generoDto)
+    {
+        if (id != generoDto.GeneroId)
+            return null;
+
+        var genero = await _uof.GeneroRepository.GetByIdAsync(g => g.GeneroId==id);
+
+        if(genero == null)
+            return null;    
+
+        _mapper.Map(generoDto, genero);
+        await _uof.Commit();
+
+        var generoAtualizado = _mapper.Map<GeneroDTO>(genero);
+        return generoAtualizado;
+    }
 }
