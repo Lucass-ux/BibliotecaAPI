@@ -25,9 +25,13 @@ public class LivroService
         var livrosDto = _mapper.Map<IEnumerable<LivroDTO>>(livros);
         return livrosDto;
     } 
-    public async Task<LivroDTO> GetLivroAsync(int id)
+    public async Task<LivroDTO?> GetLivroAsync(int id)
     {
         var livro = await _uof.LivroRepository.GetByIdAsync(l => l.LivroId == id);
+
+        if (livro == null)
+            return null;
+
         var livroDto = _mapper.Map<LivroDTO>(livro);
         return livroDto;
     }
