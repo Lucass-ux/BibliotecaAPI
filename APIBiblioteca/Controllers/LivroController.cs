@@ -26,7 +26,7 @@ public class LivroController : ControllerBase
     [HttpGet("{id:int:min(1)}", Name ="ObterLivro")]
     public async Task<ActionResult<LivroDTO>> Get(int id)
     {
-        if (id == null || id <= 0)
+        if (id <= 0)
             return BadRequest($"Id de livro inválido!");
 
         var livro = await _livroService.GetLivroAsync(id);
@@ -65,6 +65,6 @@ public class LivroController : ControllerBase
         return Ok(livroAtualizado); 
     }
 
-
+    
 
 }

@@ -26,7 +26,7 @@ public class GeneroController : ControllerBase
     [HttpGet("{id:int:min(1)}", Name = "ObterGenero")]
     public async Task<ActionResult<GeneroDTO>> Get(int id)
     {
-        if (id == null || id <= 0)
+        if (id <= 0)
             return BadRequest("Id de gênero inválido!");
 
         var genero = await _generoService.GetGeneroAsync(id);
