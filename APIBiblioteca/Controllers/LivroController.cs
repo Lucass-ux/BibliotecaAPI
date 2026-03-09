@@ -65,6 +65,17 @@ public class LivroController : ControllerBase
         return Ok(livroAtualizado); 
     }
 
-    
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult<LivroDTO>> Delete(int id)
+    {
+        var livro = await _livroService.GetLivroAsync(id);
+
+        if(livro is null)
+            return BadRequest($"Livro com id = {id} não encontrado!");
+
+        var livroDeletado = await _livroService.Delete(id);
+
+        return Ok(livroDeletado);
+    }
 
 }
