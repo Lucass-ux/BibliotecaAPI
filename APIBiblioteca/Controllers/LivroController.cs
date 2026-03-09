@@ -32,7 +32,7 @@ public class LivroController : ControllerBase
         var livro = await _livroService.GetLivroAsync(id);
 
         if (livro is null)
-            return NotFound("Livro de Id = {id} não encontrado!");
+            return NotFound($"Livro de Id = {id} não encontrado!");
 
         return Ok(livro);
     }
@@ -50,5 +50,21 @@ public class LivroController : ControllerBase
 
         return Ok(livroCriado);
     }
+
+    [HttpPut("{id:int}")]
+    public async Task<ActionResult<LivroDTO>> Put(int id, LivroDTO livro)
+    {
+        if(id != livro.LivroId)
+            return BadRequest("Dados inválidos!");
+
+        var livroAtualizado = await _livroService.Update(id, livro);
+
+        if(livroAtualizado is null)
+            return BadRequest();
+
+        return Ok(livroAtualizado); 
+    }
+
+
 
 }
