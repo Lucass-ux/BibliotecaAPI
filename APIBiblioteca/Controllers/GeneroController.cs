@@ -50,4 +50,18 @@ public class GeneroController : ControllerBase
         return Ok(generoCriado);
 
     }
+
+    [HttpPut("{id:int}")]
+    public async Task<ActionResult<GeneroDTO>> Put(int id, GeneroDTO genero)
+    {
+        if(id != genero.GeneroId)
+            return BadRequest("Dados inválidos!");
+
+        var generoAtualizado = await _generoService.Update(id, genero);
+
+        if(generoAtualizado is null)
+            return BadRequest();    
+
+        return Ok(generoAtualizado);
+    }
 }
