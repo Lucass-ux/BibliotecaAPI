@@ -64,4 +64,17 @@ public class GeneroController : ControllerBase
 
         return Ok(generoAtualizado);
     }
+
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult<GeneroDTO>> Delete(int id)
+    {
+        var genero = await _generoService.GetGeneroAsync(id);
+
+        if(genero is null)
+            return BadRequest($"Gênero com id = {id} não encontrado!");
+
+        var generoDeletado = await _generoService.Delete(id);
+
+        return Ok(generoDeletado);
+    }
 }
