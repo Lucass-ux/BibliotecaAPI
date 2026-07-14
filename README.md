@@ -6,7 +6,7 @@ Este é um projeto pessoal com o foco em boas práticas de desenvolvimento, sepa
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - C#
 - ASP.NET Core Web API
