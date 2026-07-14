@@ -13,7 +13,7 @@ Este é um projeto pessoal com o foco em boas práticas de desenvolvimento, sepa
 - Entity Framework Core
 - MySQL
 - AutoMapper
-- Swagger / OpenAPI
+- Swagger
 - User Secrets
 - Git e GitHub
 
