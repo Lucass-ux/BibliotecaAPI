@@ -2,7 +2,7 @@
 
 API REST desenvolvida com **ASP.NET Core** utilizando **Clean Architecture** para gerenciamento de livros e gêneros de uma biblioteca.
 
-Este é um projeto pessoal com o foco em boas práticas de desenvolvimento, separação de responsabilidades e organização em camadas, utilizando Entity Framework Core para persistência de dados e AutoMapper para mapeamento entre entidades e DTOs.
+Este é um projeto pessoal simples com o foco em boas práticas de desenvolvimento, separação de responsabilidades e organização em camadas, utilizando Entity Framework Core para persistência de dados e AutoMapper para mapeamento entre entidades e DTOs.
 
 ---
 
